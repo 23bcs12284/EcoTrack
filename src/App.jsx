@@ -5,9 +5,7 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import Login from "./pages/login.jsx";
 import ProtectedRoute from "./Routes/ProtectedRoutes.jsx";
 
-
 import WaterTracker from "./pages/WaterTracker.jsx";
-
 import { Navigate } from "react-router-dom";
 
 function App() {
@@ -37,7 +35,7 @@ function App() {
             />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
             <Route
-            path="/dashboard/water"
+            path="/dashboard/water"             // New route for Water Tracker
             element={
               <ProtectedRoute>
                 <WaterTracker />

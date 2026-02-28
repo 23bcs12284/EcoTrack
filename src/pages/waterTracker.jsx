@@ -8,9 +8,7 @@ function WaterTracker() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  /* ==============================
-     LOAD DATA FROM LOCAL STORAGE
-  =============================== */
+ 
   useEffect(() => {
     const savedData = localStorage.getItem("waterData");
 
@@ -21,9 +19,7 @@ function WaterTracker() {
     }
   }, []);
 
-  /* ==============================
-     SAVE DATA TO LOCAL STORAGE
-  =============================== */
+
   useEffect(() => {
     localStorage.setItem(
       "waterData",
@@ -31,9 +27,6 @@ function WaterTracker() {
     );
   }, [count, goal]);
 
-  /* ==============================
-     FETCH HEALTH TIP
-  =============================== */
   useEffect(() => {
     const fetchTip = async () => {
       try {
@@ -58,9 +51,6 @@ function WaterTracker() {
     fetchTip();
   }, []);
 
-  /* ==============================
-     MEMOIZED FUNCTIONS
-  =============================== */
   const addWater = useCallback(() => {
     setCount((prev) => prev + 1);
   }, []);
@@ -79,10 +69,6 @@ function WaterTracker() {
       setGoal(newGoal);
     }
   };
-
-  /* ==============================
-     UI
-  =============================== */
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 p-6">
 

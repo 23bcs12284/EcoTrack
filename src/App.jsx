@@ -1,12 +1,12 @@
-import Dashboard from "./pages/dashboard.jsx";
-import Log from "./pages/log.jsx";
-import Header from "./components/Header.jsx";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import Login from "./pages/login.jsx";
-import ProtectedRoute from "./Routes/ProtectedRoutes.jsx";
-
+import Dashboard from "./pages/dashboard";
+import Log from "./pages/log";
+import Login from "./pages/login";
 import WaterTracker from "./pages/WaterTracker";
-import { Navigate } from "react-router-dom";
+import Header from "./components/Header";
+import ProtectedRoute from "./Routes/ProtectedRoutes";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+
+
 
 function App() {
   return (

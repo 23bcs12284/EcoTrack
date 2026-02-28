@@ -1,44 +1,73 @@
-🌱 EcoTrack – Smart Sustainability Dashboard
+# 🌱 EcoTrack – Smart Sustainability Dashboard
+
 EcoTrack is a modern React-based sustainability tracking dashboard that helps users monitor their eco-friendly activities and daily wellness habits.
-This project includes:
-🌊 Daily Water Intake Tracker
-📊 Carbon Activity Logs (Redux Toolkit)
-🔐 Protected Routes with Authentication
-⚡ Performance Optimization (React.memo + useCallback)
-🎨 Tailwind CSS UI
-🚀 Features
-🔐 Authentication
-Fake login system
-Token stored in localStorage
-Protected routes using custom logic
-💧 Daily Water Tracker
-Add / Remove water glasses
-Reset counter
-Set custom daily goal
-Persistent storage using localStorage
-Displays progress bar
-Shows "Goal Reached" message
-Fetches daily health tip from API:
+
+This project demonstrates routing, authentication, Redux state management, performance optimization, API integration, and Tailwind CSS styling.
+
+---
+
+## 🚀 Features
+
+### 🔐 Authentication
+- Simple login system
+- Authentication state stored using Context + localStorage
+- Protected routes
+- Redirects unauthenticated users to `/login`
+
+---
+
+### 💧 Daily Water Tracker
+- Add water intake
+- Remove water intake
+- Reset daily count
+- Set custom daily goal
+- Progress bar with percentage
+- “Goal Reached” indicator
+- Persistent data using localStorage
+- StrictMode-safe implementation (lazy state initialization)
+
+#### 🌿 Health Tip API
+Fetches daily advice from:
 https://api.adviceslip.com/advice
-Loading and error handling included
-🌱 Activity Logs (Redux Toolkit)
-Async data fetching using createAsyncThunk
-Loading / Success / Error states
-Filters logs based on carbon emission
-Styled badge indicators:
-🔴 High carbon
-🟢 Low carbon
-⚡ Performance Optimization
-React.memo() for CounterDisplay component
-useCallback() for handler functions
-StrictMode-safe localStorage implementation
-🛠️ Tech Stack
-React 18+
-React Router DOM
-Redux Toolkit
-Tailwind CSS
-JavaScript (ES6+)
-📁 Project Structure
+
+Includes:
+- Loading state
+- Error handling
+
+---
+
+### 🌱 Activity Logs (Redux Toolkit)
+- Async data fetching using `createAsyncThunk`
+- Loading / Success / Error states
+- Displays carbon emission activities
+- Color-coded badges:
+  - 🔴 High carbon emission
+  - 🟢 Low carbon emission
+
+---
+
+### ⚡ Performance Optimization
+- `React.memo()` for CounterDisplay component
+- `useCallback()` for event handlers
+- Prevents unnecessary re-renders
+- StrictMode compatible
+
+---
+
+## 🛠️ Tech Stack
+
+- React 18+
+- React Router DOM
+- Redux Toolkit
+- React Context API
+- Tailwind CSS
+- JavaScript (ES6+)
+
+---
+
+## 📁 Project Structure
+
+```
 src/
 │
 ├── components/
@@ -57,46 +86,87 @@ src/
 │
 ├── App.jsx
 └── main.jsx
-⚙️ Installation & Setup
-1️⃣ Clone the repository
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```
 git clone <your-repo-url>
 cd ecotrack
-2️⃣ Install dependencies
+```
+
+### 2. Install dependencies
+
+```
 npm install
-3️⃣ Start development server
+```
+
+### 3. Start development server
+
+```
 npm run dev
-🔒 Protected Routes Logic
-If user is not authenticated:
-→ Redirect to /login
-Authentication state is managed using:
-React Context
-localStorage token
-💾 Persistent Storage
+```
+
+---
+
+## 🔒 Protected Routes Logic
+
+- If user is not authenticated → redirect to `/login`
+- Authentication token stored in localStorage
+- Context API manages auth state
+
+---
+
+## 💾 Persistent Storage
+
 Water tracker uses:
+
+```
 localStorage.setItem("waterData", JSON.stringify({ count, goal }))
-Uses lazy initialization to prevent StrictMode reset issues.
-🧠 Redux Flow
-dispatch(fetchLogs())
-        ↓
-pending → loading state
-        ↓
-fulfilled → data stored in state.logs.data
-        ↓
-UI renders filtered logs
-🎯 Learning Outcomes
+```
+
+Uses lazy state initialization to avoid reset issues in React StrictMode.
+
+---
+
+## 🧠 Redux Flow
+
+1. `dispatch(fetchLogs())`
+2. Status changes to `loading`
+3. On success → data stored in `state.logs.data`
+4. UI renders filtered logs
+
+---
+
+## 🎯 Learning Outcomes
+
 This project demonstrates:
-React Hooks mastery
-State management patterns
-Async logic with Redux Toolkit
-Performance optimization
-UI design with Tailwind
-StrictMode-safe coding practices
-🌟 Future Improvements
-📅 Daily history tracking
-📊 Chart.js carbon graph
-🌙 Dark mode
-🔔 Water reminder notifications
-🏆 Achievement badges
-👨‍💻 Author
-Your Name
-Frontend Developer | React Enthusiast
+
+- Advanced React Hooks usage
+- Redux async state management
+- Routing and protected navigation
+- API integration
+- Performance optimization
+- Tailwind responsive UI
+- StrictMode-safe coding practices
+
+---
+
+## 🌟 Future Improvements
+
+- Daily activity history
+- Carbon emission charts
+- Dark mode
+- Water reminder notifications
+- Achievement badge system
+
+---
+
+## 👨‍💻 Author
+
+Your Name  
+Frontend Developer | React Developer

@@ -5,7 +5,7 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import Login from "./pages/login.jsx";
 import ProtectedRoute from "./Routes/ProtectedRoutes.jsx";
 
-import WaterTracker from "./pages/WaterTracker.jsx";
+import WaterTracker from "./pages/WaterTracker";
 import { Navigate } from "react-router-dom";
 
 function App() {
